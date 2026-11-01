@@ -13,11 +13,16 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       
+      - name: fix
+        run: npm install uri-js@4.2.2
+
+      
       - name: 设置Python
         uses: actions/setup-python@v4
         with:
           python-version: '3.9.12'
-      
+          
+  
       - name: 缓存Python依赖
         uses: actions/cache@v3
         with:
